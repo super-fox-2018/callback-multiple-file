@@ -6,7 +6,7 @@ function match_data(parent_file, children_file, cb) {
     if(err){
       throw err;
     }
-    // sleep.sleep(5);
+    sleep.sleep(5);
     let parents_data = JSON.parse(data);
 
     fs.readFile(children_file, "utf8", (err,data) => {
