@@ -6,7 +6,7 @@ function match_data(parent_file, children_file, cb) {
     if(err){
       throw err;
     }
-    sleep.sleep(5);
+    // sleep.sleep(5);
     let parents_data = JSON.parse(data);
 
     fs.readFile(children_file, "utf8", (err,data) => {
@@ -23,10 +23,10 @@ function addChildren(parents_data, childrens_data){
     parents_data[i].children = [];
     for(let k = 0; k < childrens_data.length; k++){
       if(parents_data[i].last_name === childrens_data[k].family){
-        sleep.sleep(5);
         parents_data[i].children.push(childrens_data[k].full_name);
       }
     }
+    sleep.sleep(5);
   }
   console.log(parents_data);
 }
